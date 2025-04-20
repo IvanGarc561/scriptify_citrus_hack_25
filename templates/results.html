@@ -22,6 +22,7 @@
   </form>
 
   {% if results %}
+    <p>{{ results | length }} result(s) found</p>
     <div class="results-container text-start" style="max-width: 800px; margin: 0 auto;">
       <ul class="list-unstyled">
         {% for entry in results %}
