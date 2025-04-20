@@ -1,14 +1,80 @@
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      color: #333;
-    }
-    form {
-      margin-top: 1rem;
-    }
+title{
+  text-align: center;
+  
+}
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+h1 a {
+  text-decoration: none;
+  color: #333;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  transition: color 0.3s;
+}
+h1 a:hover {
+  color: #007bff;
+}
+form {
+  margin-top: 1rem auto;
+  text-align: center;
+}
+
+form input[type="text"] {
+  padding: 0.5rem;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button{
+  padding: 0.5rem 1.25rem;
+  margin-left: 0.5rem;
+  background-color: #0066CC;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+form button:hover{
+  background-color: #004c99;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+li{
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+li strong {
+  display: block;
+  font-weight: 600;
+  color: #0066cc;
+  margin-bottom: 0.25rem;
+}
+mark {
+  background-color: #ffff88;
+  font-weight: bold;
+  padding: 0 0.2em;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #f1f1f1;
+  color: #888;
+}
 input[type="text"] {
   padding: 0.5rem;
   width: 300px;
@@ -34,3 +100,12 @@ mark {
   background-color: yellow;
   font-weight: bold;
 }
+.navbar{
+  margin-bottom: 2rem;
+}
+.special-gothic-expanded-one-regular {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+

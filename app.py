@@ -38,7 +38,7 @@ def search_with_tfidf(query, vectorizer, matrix, lines):
     scored_lines = [
         (score, lines[i]) for i, score in enumerate(scores) if score > 0
     ]
-    scored_lines.sort(reverse = True)
+    scored_lines.sort(key=lambda x: x[0], reverse=True)
     return [line for score, line in scored_lines]
 
 vectorizer, matrix, lines_for_tfidf = build_tfidf_index(script_lines)
