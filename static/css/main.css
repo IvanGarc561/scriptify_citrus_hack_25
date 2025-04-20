@@ -129,4 +129,25 @@ mark {
   margin: 0 auto;
 }
 
+@keyframes fadeInUp{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+.animate-fade-in{
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.result-card{
+  transition: transform 0.2s ease-in-out;
+}
+
+.result-card:hover{
+  transform: translateY(-5px);
+}

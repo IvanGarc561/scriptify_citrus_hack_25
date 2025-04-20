@@ -22,17 +22,20 @@
   </form>
 
   {% if results %}
-    <p>{{ results | length }} result(s) found</p>
-    <div class="results-container text-start" style="max-width: 800px; margin: 0 auto;">
-      <ul class="list-unstyled">
-        {% for entry in results %}
-          <li>
-            <strong>{{ entry.movie }}</strong> 
-            {{ entry.line.replace(query, "<mark>" ~ query ~ "</mark>") | safe }}
-          </li>
-        {% endfor %}
-      </ul>
+    <p class="text-muted mt-3">{{ results | length }} result{{ results|length != 1 and 's' or '' }} found</p>
+    <div class="results-container row row-cols-1 row-cols-md-2 g-4 mt-4">
+      {% for entry in results %}
+        <div class="col">
+          <div class="card result-card h-100 shadow-sm animate-fade-in">
+            <div class="card-body">
+              <h5 class="card-title">{{ entry.movie }}</h5>
+              <p class="card-text">{{ entry.line.replace(query, "<mark>" ~ query ~ "</mark>") | safe }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
     </div>
+
   {% else %}
     <p>No matching lines found.</p>
   {% endif %}
