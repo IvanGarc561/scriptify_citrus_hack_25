@@ -5,11 +5,11 @@ Pefect for researchers, fans, or to sound smart in movie trivia night
 
 ---
 
-**Features
-**Search** movie scripts by quote or phrase
-**See matching lines** with the name of the movie
-**New serach instantly** from the results page
-Powered by **TF-IDF** to ensure only relevent lines are present
+**Features**
+- **Search** movie scripts by quote or phrase
+- **See matching lines** with the name of the movie
+- **New serach instantly** from the results page
+- Powered by **TF-IDF** to ensure only relevent lines are present
 
 ## Screenshots
 ![Home](./screenshots/home.png) | [Results](./screenshots/results.png)|
@@ -25,4 +25,4 @@ Powered by **TF-IDF** to ensure only relevent lines are present
 - SQLite for optional data persistence
 
 - Movie scripts sourced from IMSDB
-- Made by Ivan Garcia-Mora
+Made by Ivan Garcia-Mora
