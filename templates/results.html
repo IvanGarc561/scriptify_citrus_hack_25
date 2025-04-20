@@ -1,21 +1,38 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
 {% endblock %}
 
 {% block body %}
- <h2>Results for: "{{ query }}"</h2>
+  <h2>Results for: "{{ query }}"</h2>
+
+  <a href="/" class="btn btn-secondary mb-3">New Search</a>
+
+  <form action="/search" method="get" class="mb-4">
+    <div class="d-flex gap-2 align-items-start">
+      <input type="text" name="query" placeholder="Search a quote..." value="{{ query }}" class="form-control" required>
+      <select name="movie" class="form-select">
+        <option value="">All Movies</option>
+        {% for movie in movie_list %}
+          <option value="{{ movie }}" {% if movie == selected_movie %}selected{% endif %}>{{ movie }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
 
   {% if results %}
-    <ul>
-      {% for entry in results %}
-        <li><strong>{{ entry.movie }}</strong>: {{ entry.line.replace(query, "<mark>" ~ query ~ "</mark>") | safe }}</li>
-      {% endfor %}
-    </ul>
+    <div class="results-container text-start" style="max-width: 800px; margin: 0 auto;">
+      <ul class="list-unstyled">
+        {% for entry in results %}
+          <li>
+            <strong>{{ entry.movie }}</strong> 
+            {{ entry.line.replace(query, "<mark>" ~ query ~ "</mark>") | safe }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   {% else %}
     <p>No matching lines found.</p>
   {% endif %}
-  
-  <button type = "submit"><a class = "button_text"href='/' >New Search</a></button>
 {% endblock %}

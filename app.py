@@ -23,6 +23,7 @@ def load_scripts(script_folder = 'scripts'):
     return script_data
 
 script_lines = load_scripts()
+movie_names = sorted(set(entry['movie'] for entry in script_lines))
 
 # Build Search index once when app starts
 def build_tfidf_index(lines):
@@ -50,10 +51,23 @@ def index():
 @app.route("/search")
 def search():
     query = request.args.get("query", "")
-    results = search_with_tfidf(query, vectorizer, matrix, lines_for_tfidf)
+    selected_movie = request.args.get("movie", "")
+
+    # Filter lines if a movie is selected
+    filtered_lines = [
+        line for line in script_lines if line['movie'] == selected_movie
+    ] if selected_movie else script_lines
+
+    # 🔧 Rebuild TF-IDF index on the filtered set
+    vectorizer, matrix, _ = build_tfidf_index(filtered_lines)
+
+    results = search_with_tfidf(query, vectorizer, matrix, filtered_lines)
+
     if not results:
-        results = search_script_lines(query, script_lines)
-    return render_template("results.html", results=results, query=query)
+        results = search_script_lines(query, filtered_lines)
+
+    return render_template("results.html", results=results, query=query,
+                           movie_list=movie_names, selected_movie=selected_movie)
 
 def search_script_lines(query, scripts):
     return [
