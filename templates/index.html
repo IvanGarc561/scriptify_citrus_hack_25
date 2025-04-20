@@ -4,8 +4,9 @@
 {% endblock %}
 
 {% block body %}
+  <h1 class="special-gothic-expanded-one-regular" id = "main_title"><a href="/">Scriptify </a></h1>
   <form action="/search" method="get">
     <input type="text" name="query" placeholder="Search movie lines..." required>
-    <button type="submit">Search</button>
+    <button type="submit" class="btn-search">Search</button>
   </form>
 {% endblock %}

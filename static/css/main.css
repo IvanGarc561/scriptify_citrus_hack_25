@@ -1,17 +1,17 @@
 body {
   font-family: Arial, sans-serif;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: #333;
 }
 h1 a {
   text-decoration: none;
-  color: #333;
+  color: goldenrod;
   font-size: 2.5rem;
   margin-left: 2rem;
   transition: color 0.3s;
 }
 h1 a:hover {
-  color: #007bff;
+  color: goldenrod;
 }
 form {
   margin-top: 1rem auto;
@@ -28,14 +28,14 @@ form input[type="text"] {
 form button{
   padding: 0.5rem 1.25rem;
   margin-left: 0.5rem;
-  background-color: #0066CC;
+  background-color: #DC143C;
   color: white;
   border: none;
   border-radius: 4px;
 }
 
 form button:hover{
-  background-color: #004c99;
+  background-color: #960f2a;
 }
 
 ul {
@@ -58,11 +58,11 @@ li{
 li strong {
   display: block;
   font-weight: 600;
-  color: #0066cc;
+  color: #DC143C;
   margin-bottom: 0.25rem;
 }
 mark {
-  background-color: #ffff88;
+  background-color: #333;
   font-weight: bold;
   padding: 0 0.2em;
 }
@@ -71,7 +71,7 @@ footer {
   margin-top: 3rem;
   padding: 1rem;
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: goldenrod;
   color: #888;
 }
 input[type="text"] {
@@ -83,7 +83,7 @@ input[type="text"] {
 button {
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #333;
+  background-color: #DC143C;
   color: white;
   border-radius: 4px;
   cursor: pointer;
@@ -107,18 +107,16 @@ mark {
   font-weight: 400;
   font-style: normal;
 }
-.d-flex_gap-2{
-
-}
-
-.form-control{
-
+#main_title{
+  text-align: center;
+  background-color: none;
+  color: goldenrod;
 }
 
 .btn_btn-secondary{
   padding: 0.5rem 1.25rem;
   margin-left: 0.5rem;
-  background-color: #0066CC;
+  background-color: #DC143C;
   color: white;
   border: none;
   border-radius: 4px;
@@ -150,4 +148,32 @@ mark {
 
 .result-card:hover{
   transform: translateY(-5px);
+}
+.navbar-custom {
+  background-color: #333; /* dark grey */
+}
+
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: goldenrod; /* light text */
+}
+
+.navbar-custom .nav-link:hover {
+  color: goldenrod;
+}
+.font-color{
+  color: white;
+}
+.btn-search {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-search:hover {
+  background-color: darkred;
+  color: white;
 }

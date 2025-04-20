@@ -58,7 +58,6 @@ def search():
         line for line in script_lines if line['movie'] == selected_movie
     ] if selected_movie else script_lines
 
-    # 🔧 Rebuild TF-IDF index on the filtered set
     vectorizer, matrix, _ = build_tfidf_index(filtered_lines)
 
     results = search_with_tfidf(query, vectorizer, matrix, filtered_lines)
