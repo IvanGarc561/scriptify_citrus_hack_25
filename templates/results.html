@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+ <h2>Results for: "{{ query }}"</h2>
+
+  {% if results %}
+    <ul>
+      {% for entry in results %}
+        <li><strong>{{ entry.movie }}</strong>: {{ entry.line.replace(query, "<mark>" ~ query ~ "</mark>") | safe }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No matching lines found.</p>
+  {% endif %}
+  
+  <button type = "submit"><a class = "button_text"href='/' >New Search</a></button>
+{% endblock %}
